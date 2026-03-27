@@ -59,10 +59,11 @@ result = PEPTSpline.fit(
     fit_window_overlap=0.5,    # consecutive windows overlap by 50%
 )
 
-xyz = result.evaluate([10.0, 30.0, 50.0])   # query positions at 10, 30, 50 ms
-vel = result.velocity([10.0, 30.0, 50.0])   # velocity in mm per time-unit
-uniform_t = result.resample_time(20.0)       # uniform-time output, every 20 ms
-uniform_s = result.resample_space(1.0)       # uniform-space output, every 1 mm
+# Get the fitted trajectory on a uniform time grid.
+trajectory_uniform_time = result.resample_time(20.0)  # one row every 20 ms
+
+# Or get the fitted trajectory on a uniform distance grid.
+trajectory_uniform_space = result.resample_space(1.0)  # one row every 1 mm
 ```
 
 ## Public API
