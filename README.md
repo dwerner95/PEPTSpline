@@ -1,12 +1,13 @@
 # PEPTSpline
 
-Small Python wrapper around the trajectory denoiser in this repository.
+A standalone Python package for robust spline-based PEPT trajectory fitting.
 
 ## Install
 
-From the repository root:
+From inside this folder:
 
 ```bash
+cd PEPTSpline
 pip install -e .
 ```
 
@@ -60,3 +61,14 @@ The returned `FitResult` exposes:
 - `resample_time(dt_out=None)`
 - `resample_space(ds_mm)`
 - `diagnostics`
+
+## Layout
+
+This folder is a self-contained Python project:
+
+- `pyproject.toml`
+- `PEPTSpline/`
+- `examples/`
+- `tests/`
+
+It does not import code from the repository root package.
